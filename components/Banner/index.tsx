@@ -11,14 +11,16 @@ export default function Banner(props: LayoutProps) {
 
   return (
     <div className={styles.container}>
-      <h1>
+      <h1 className={styles.title}>
         <span className={styles.title1}>Coffee</span>
         <span className={styles.title2}>Pontianak</span>
       </h1>
-      <p className={styles.subtitle}>Temukan Cafe Local! </p>
-      <button className={styles.button} onClick={handleOnClick}>
-        {buttonText}
-      </button>
+      <p className={styles.subTitle}>Temukan Cafe Local! </p>
+      <div className={styles.buttonWrapper}>
+        <button className={styles.button} onClick={handleOnClick}>
+          {buttonText}
+        </button>
+      </div>
     </div>
   );
 }
