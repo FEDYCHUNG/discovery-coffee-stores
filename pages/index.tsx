@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 
@@ -10,7 +9,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <Head>
         <title>Coffee Pontianak</title>
         <meta name="description" content="Coffee Pontianak" />
@@ -20,7 +19,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <Banner buttonText="Lihat caffee terdekat" handleOnClick={handleOnBannerBtnClick} />
+
+        <div className={styles.heroImage}>
+          <Image src="/images/hero-image.png" width={700} height={400} alt="hero" />
+        </div>
       </main>
-    </>
+    </div>
   );
 }

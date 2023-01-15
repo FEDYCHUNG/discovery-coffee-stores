@@ -123,6 +123,7 @@
   }
 
   .buttonWrapper {
+    margin-top: 1.25rem;
     justify-content: flex-start;
   }
 }
