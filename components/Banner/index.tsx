@@ -1,4 +1,4 @@
-import styles from "../../styles/Banner.module.css";
+import styles from "./banner.module.css";
 import { MouseEventHandler } from "react";
 
 interface LayoutProps {
