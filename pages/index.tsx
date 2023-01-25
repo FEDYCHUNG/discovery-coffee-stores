@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
+import logger from "../logger";
 
 import coffeeStores from "../data/coffee-stores.json";
 
@@ -28,35 +29,38 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  console.log(props);
-  const handleOnBannerBtnClick = () => {
-    console.log("banner clicked");
-  };
+  try {
+    logger.error("Home");
+    const handleOnBannerBtnClick = () => {
+      console.log("banner clicked");
+    };
 
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Coffee Pontianak</title>
-        <meta name="description" content="Coffee Pontianak" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+      <div className={styles.container}>
+        <Head>
+          <title>Coffee Pontianak</title>
+          <meta name="description" content="Coffee Pontianak" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main className={styles.main}>
-        <Banner buttonText="Lihat caffee terdekat" handleOnClick={handleOnBannerBtnClick} />
+        <main className={styles.main}>
+          <Banner buttonText="Lihat caffee terdekat" handleOnClick={handleOnBannerBtnClick} />
 
-        <div className={styles.heroImage}>
-          <Image src="/images/hero-image.png" width={700} height={400} alt="hero" />
-        </div>
-
-        <div className={styles.cardLayout}>
-          {coffeeStores.map((coffeeStore) => (
-            <div className={styles.card} key={coffeeStore.id}>
-              <Card name={coffeeStore.name} imgUrl={coffeeStore.imgUrl} href={`/coffee-store/${coffeeStore.id}`} />
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
-  );
+          <div className={styles.heroImage}>
+            <Image src="/images/hero-image.png" width={700} height={400} alt="hero" />
+          </div>
+          <div className={styles.cardLayout}>
+            {coffeeStores.map((coffeeStore) => (
+              <div className={styles.card} key={coffeeStore.id}>
+                <Card name={coffeeStore.name} imgUrl={coffeeStore.imgUrl} href={`/coffee-store/${coffeeStore.id}`} />
+              </div>
+            ))}
+          </div>
+        </main>
+      </div>
+    );
+  } catch (error) {
+    logger.error(error);
+  }
 }
