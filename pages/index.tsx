@@ -6,31 +6,14 @@ import Card from "../components/Card";
 import logger from "../logger";
 
 import coffeeStoresData from "../data/coffee-stores.json";
+import { fetchCoffeeStores } from "../lib/coffe-stores";
 
 export async function getStaticProps(context: any) {
-  const FOURSQUARE_API_KEY = process.env.FOURSQUARE_API_KEY;
-
-  if (!FOURSQUARE_API_KEY) {
-    throw new Error("FOURSQUARE API KEY is missing from the environment variables");
-  }
-
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: FOURSQUARE_API_KEY,
-    },
-  };
-
-  const response = await fetch(
-    "https://api.foursquare.com/v3/places/search?query=kopi&ll=-0.021019013208513137%2C109.33001312451829&limit=6",
-    options
-  );
-  const data = await response.json();
+  const data = await fetchCoffeeStores();
 
   return {
     props: {
-      coffeeStores: data.results,
+      coffeeStores: data,
     },
   };
 }
