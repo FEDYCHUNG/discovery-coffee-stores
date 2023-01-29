@@ -8,15 +8,35 @@ import logger from "../logger";
 import coffeeStoresData from "../data/coffee-stores.json";
 
 export async function getStaticProps(context: any) {
+  const FOURSQUARE_API_KEY = process.env.FOURSQUARE_API_KEY;
+
+  if (!FOURSQUARE_API_KEY) {
+    throw new Error("FOURSQUARE API KEY is missing from the environment variables");
+  }
+
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: FOURSQUARE_API_KEY,
+    },
+  };
+
+  const response = await fetch(
+    "https://api.foursquare.com/v3/places/search?query=kopi&ll=-0.021019013208513137%2C109.33001312451829&limit=6",
+    options
+  );
+  const data = await response.json();
+
   return {
     props: {
-      coffeeStores: coffeeStoresData,
+      coffeeStores: data.results,
     },
   };
 }
 
 interface coffeeStore {
-  id: number;
+  fsq_id: string;
   name: string;
   imgUrl: string;
   websiteUrl: string;
@@ -56,8 +76,15 @@ export default function Home(props: HomeProps) {
               <h2 className={styles.heading2}>Pontianak Store</h2>
               <div className={styles.cardLayout}>
                 {coffeeStores?.map((coffeeStore) => (
-                  <div className={styles.card} key={coffeeStore.id}>
-                    <Card name={coffeeStore.name} imgUrl={coffeeStore.imgUrl} href={`/coffee-store/${coffeeStore.id}`} />
+                  <div className={styles.card} key={coffeeStore.fsq_id}>
+                    <Card
+                      name={coffeeStore.name}
+                      imgUrl={
+                        coffeeStore.imgUrl ||
+                        "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                      }
+                      href={`/coffee-store/${coffeeStore.fsq_id}`}
+                    />
                   </div>
                 ))}
               </div>
