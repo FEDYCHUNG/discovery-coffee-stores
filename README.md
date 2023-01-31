@@ -13,11 +13,14 @@ Single Page Application (SPA) showing 6 Location Coffee Store from Pontianak usi
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 - [Foursquare](https://location.foursquare.com/developer/reference/place-search)
+- [Unsplash Developer](https://unsplash.com/documentation)
 
 ## Requirements
 
 - [Node.js](https://nodejs.org/en/download/)
+- [Next.js 13](https://nextjs.org/)
 - [Foursquare API KEY](https://location.foursquare.com/developer/)
+- [UNSPLASH_ACCESS_KEY](https://unsplash.com/developers)
 
 ## Installation
 
@@ -31,10 +34,16 @@ Single Page Application (SPA) showing 6 Location Coffee Store from Pontianak usi
 ```
 
 - Change .env.example to .env.local
-- Inside .env.local replace '' field with Foursquare API KEY
+- Inside .env.local replace '' field with FOURSQUARE_API_KEY
 
 ```typescript
 FOURSQUARE_API_KEY = "";
+```
+
+- Inside .env.local replace '' field with UNSPLASH_ACCESS_KEY
+
+```typescript
+UNSPLASH_ACCESS_KEY = "";
 ```
 
 - Run Project in Development mode

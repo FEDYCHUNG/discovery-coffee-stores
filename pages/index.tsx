@@ -10,7 +10,6 @@ import { fetchCoffeeStores } from "../lib/coffe-stores";
 
 export async function getStaticProps(context: any) {
   const data = await fetchCoffeeStores();
-
   return {
     props: {
       coffeeStores: data,
