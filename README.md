@@ -34,13 +34,13 @@ Single Page Application (SPA) showing 6 Location Coffee Store from Pontianak usi
 ```
 
 - Change .env.example to .env.local
-- Inside .env.local replace '' field with FOURSQUARE_API_KEY
+- Inside .env.local replace '' field with [FOURSQUARE API KEY](https://location.foursquare.com/developer/)
 
 ```typescript
 FOURSQUARE_API_KEY = "";
 ```
 
-- Inside .env.local replace '' field with UNSPLASH_ACCESS_KEY
+- Inside .env.local replace '' field with [UNSPLASH API ACCESS KEY](https://unsplash.com/developers)
 
 ```typescript
 UNSPLASH_ACCESS_KEY = "";
