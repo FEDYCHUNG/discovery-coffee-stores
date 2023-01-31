@@ -1,14 +1,12 @@
 import styles from "./banner.module.css";
 import { MouseEventHandler } from "react";
 
-interface LayoutProps {
+type LayoutProps = {
   buttonText: string;
   handleOnClick: MouseEventHandler<HTMLButtonElement>;
-}
+};
 
-export default function Banner(props: LayoutProps) {
-  const { buttonText, handleOnClick } = props;
-
+export default function Banner({ buttonText, handleOnClick }: LayoutProps) {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
