@@ -48,7 +48,6 @@ export default function Home(props: HomeProps) {
         </Head>
 
         <main className={styles.main}>
-          <a href="https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git">
 
             <Banner buttonText="Lihat caffee terdekat" handleOnClick={handleOnBannerBtnClick} />
 

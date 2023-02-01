@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git/badge.svg)](https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git)
+
 # NEXTJS 13
 
 LEARN NEXTJS FROM COURSE (.js)
@@ -14,8 +16,6 @@ Single Page Application (SPA) showing 6 Location Coffee Store from Pontianak usi
 - [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 - [Foursquare](https://location.foursquare.com/developer/reference/place-search)
 - [Unsplash Developer](https://unsplash.com/documentation)
-
-[![Known Vulnerabilities](https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git/badge.svg)](https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git)
 
 ## Requirements
 
