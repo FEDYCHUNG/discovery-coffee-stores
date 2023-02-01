@@ -15,6 +15,8 @@ Single Page Application (SPA) showing 6 Location Coffee Store from Pontianak usi
 - [Foursquare](https://location.foursquare.com/developer/reference/place-search)
 - [Unsplash Developer](https://unsplash.com/documentation)
 
+[![Known Vulnerabilities](https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git/badge.svg)](https://snyk.io/test/github/FEDYCHUNG/discovery-coffee-stores.git)
+
 ## Requirements
 
 - [Node.js](https://nodejs.org/en/download/)
