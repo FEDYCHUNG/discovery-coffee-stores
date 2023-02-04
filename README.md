@@ -6,7 +6,7 @@ LEARN NEXTJS FROM COURSE (.js)
 
 with the difference that I use typescript (.tsx) in this project
 
-Single Page Application (SPA) showing 6 Location Coffee Store from Pontianak using Foursquare API
+Single Page Application (SPA) showing 6 Location Coffee Stores at Pontianak using Foursquare API & Unsplash Image
 
 ## Documentation
 

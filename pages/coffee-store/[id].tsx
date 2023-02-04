@@ -81,7 +81,7 @@ export default function CoffeeStore(props: CoffeeStoreProps) {
       <div className={styles.container}>
         <div className={styles.col1}>
           <div className={styles.backToHomeLink}>
-            <Link href="/">Back to Home</Link>
+            <Link href="/">&larr; Back to Home</Link>
           </div>
 
           <div className={styles.nameWrapper}>
